@@ -1,0 +1,41 @@
+@import "variables";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: $input-font-size;
+}
+body {
+    min-height: 100vh;
+    background-color: $light-grayish-cyan1;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#logo{
+    margin-bottom: 40px;
+}
+main{
+    width: 860px;
+    background-color: $light-grayish-cyan2;
+    border-radius: $input-font-size;
+    display: flex;
+    font-family: $font;
+    font-size: 1rem;
+    padding: 1em;
+    
+    .INPUT{
+        display: flex;
+        flex-direction: column;
+    }
+    .OUTPUT{
+        .tip-amount-person{
+            border: 1px solid black;
+            display: flex;
+        }
+    }
+}
