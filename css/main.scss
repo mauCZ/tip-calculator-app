@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // border: 1px solid black;
 }
 html{
     font-size: $input-font-size;
@@ -20,22 +21,106 @@ body {
     margin-bottom: 40px;
 }
 main{
-    width: 860px;
+    // width: 860px;
     background-color: $light-grayish-cyan2;
     border-radius: $input-font-size;
-    display: flex;
     font-family: $font;
-    font-size: 1rem;
-    padding: 1em;
+    display: flex;
+    padding: 1rem;
     
     .INPUT{
+        border-radius: 14px;
+        padding: 1.7rem 1.7rem 1.7rem 1.7rem;
         display: flex;
         flex-direction: column;
-    }
-    .OUTPUT{
-        .tip-amount-person{
-            border: 1px solid black;
-            display: flex;
+
+        .info-input{
+            padding: .5em 0 .5em 0;
+            input{
+                font-size: $input-font-size;
+                border: 0px;
+                background-color: $dark-grayish-cyan1;
+                padding: .3em .3em .3em .3em;
+            }
+            input[type='text']{
+                width: 100%;
+            }
+        }
+        .options-container{
+            display: grid;
+            grid-template-columns: 120px 120px 120px;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+
+            .option{
+                background-color: $very-dark-cyan;
+            }
+            ::placeholder{
+                color: $very-dark-cyan;
+                text-align: center;
+            }
+            .percentage{
+                border: 0px;
+                font-family: $font;
+                padding: .3em 0 .3em 0;
+                color: $light-grayish-cyan2;
+                border-radius: 8px;
+                font-size: 1rem;    
+                font-weight: 700;
+            }
+        }
+        .comp-font{
+            opacity: 55%;
         }
     }
+    .OUTPUT{
+        border-radius: 14px;
+        padding: 1.7rem 1.7rem 1.7rem 1.7rem;
+        background-color: $very-dark-cyan;
+        position: relative;
+        font-size: .6rem;
+
+        .tip-amount-person{
+            display: flex;
+            padding-top: .5em;
+            padding-bottom: .5em;
+            justify-content: space-between;
+            font-weight: 700;
+
+            p{
+                padding-right: 3em;
+                color: $light-grayish-cyan1;
+            }
+            p::first-line{
+                opacity: 100%;
+            }
+            label{
+                color: $strong-cyan;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+        }
+        button{
+            width: 100%;
+            font-size: 1rem;
+            position: relative;
+            font-weight: 700;
+            bottom: -170px;
+            border-radius: 8px;
+            padding: .3em 0 .3em 0;
+            border: 0px;
+            background-color: hsla(172, 67%, 45%,.3);
+        }
+    }
+    .comp-font{
+        font-size: .7rem;
+        font-weight: 700;
+        padding: .5em 0 .5em 0;
+    }
+}
+label{
+    display: block;
+}
+button{
+    display: block;
 }

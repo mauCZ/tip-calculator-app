@@ -20,33 +20,35 @@
     <main>
         <section class='INPUT'>
             <div class='info-input'>
-                <label for="id">Bill</label>
+                <label class='comp-font' for="id">Bill</label>
                 <input type="text" id="bill">
             </div>
             <div class='info-input'>
-                <p>Select Tip %</p>
-                <button class='option-percentage'>5%</button>
-                <button class='option-percentage'>10%</button>
-                <button class='option-percentage'>15%</button>
-                <button class='option-percentage'>25%</button>
-                <button class='option-percentage'>50%</button>
-                <input id='custom-percentage' type="type" placeholder="Custom"> 
+                <p class='comp-font'>Select Tip %</p>
+                <div class="options-container">
+                    <button class='option percentage'>5%</button>
+                    <button class='option percentage'>10%</button>
+                    <button class='option percentage'>15%</button>
+                    <button class='option percentage'>25%</button>
+                    <button class='option percentage'>50%</button>
+                    <input class='custom percentage' type="type" placeholder="Custom"> 
+                </div>
             </div>
             <div class='info-input'>
-                <label for="persons">Number of People</label>
+                <label class='comp-font' for="persons">Number of People</label>
                 <input type="text" id="persons" placeholder="0">
             </div>
         </section>
         <section class='OUTPUT'>
             <div class="tip-amount-person">
-                <p>Tip amount <br> /person</p>
+                <p class='comp-font'>Tip Amount <br> / person</p>
                 <label>$0.00</label>
             </div>
             <div class="tip-amount-person">
-                <p>Total <br> /person</p>
+                <p class='comp-font'>Total <br> / person</p>
                 <label>$0.00</label>
             </div>
-            <button id="reset-btn">Reset</button>
+            <button id="reset-btn">RESET</button>
         </section>
     </main>
     <!-- <div class="attribution">

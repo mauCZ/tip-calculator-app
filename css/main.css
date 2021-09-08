@@ -32,18 +32,18 @@ body {
 }
 
 main {
-  width: 860px;
   background-color: #f4fafa;
   border-radius: 24px;
+  font-family: "Space Mono", monospace;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-family: "Space Mono", monospace;
-  font-size: 1rem;
-  padding: 1em;
+  padding: 1rem;
 }
 
 main .INPUT {
+  border-radius: 14px;
+  padding: 1.7rem 1.7rem 1.7rem 1.7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,10 +53,127 @@ main .INPUT {
           flex-direction: column;
 }
 
+main .INPUT .info-input {
+  padding: .5em 0 .5em 0;
+}
+
+main .INPUT .info-input input {
+  font-size: 24px;
+  border: 0px;
+  background-color: rgba(94, 122, 125, 0.1);
+  padding: .3em .3em .3em .3em;
+}
+
+main .INPUT .info-input input[type='text'] {
+  width: 100%;
+}
+
+main .INPUT .options-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 120px 120px 120px;
+      grid-template-columns: 120px 120px 120px;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+main .INPUT .options-container .option {
+  background-color: #00494d;
+}
+
+main .INPUT .options-container ::-webkit-input-placeholder {
+  color: #00494d;
+  text-align: center;
+}
+
+main .INPUT .options-container :-ms-input-placeholder {
+  color: #00494d;
+  text-align: center;
+}
+
+main .INPUT .options-container ::-ms-input-placeholder {
+  color: #00494d;
+  text-align: center;
+}
+
+main .INPUT .options-container ::placeholder {
+  color: #00494d;
+  text-align: center;
+}
+
+main .INPUT .options-container .percentage {
+  border: 0px;
+  font-family: "Space Mono", monospace;
+  padding: .3em 0 .3em 0;
+  color: #f4fafa;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+main .INPUT .comp-font {
+  opacity: 55%;
+}
+
+main .OUTPUT {
+  border-radius: 14px;
+  padding: 1.7rem 1.7rem 1.7rem 1.7rem;
+  background-color: #00494d;
+  position: relative;
+  font-size: .6rem;
+}
+
 main .OUTPUT .tip-amount-person {
-  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: 700;
+}
+
+main .OUTPUT .tip-amount-person p {
+  padding-right: 3em;
+  color: #c5e4e7;
+}
+
+main .OUTPUT .tip-amount-person p::first-line {
+  opacity: 100%;
+}
+
+main .OUTPUT .tip-amount-person label {
+  color: #26c0ab;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+main .OUTPUT button {
+  width: 100%;
+  font-size: 1rem;
+  position: relative;
+  font-weight: 700;
+  bottom: -170px;
+  border-radius: 8px;
+  padding: .3em 0 .3em 0;
+  border: 0px;
+  background-color: rgba(38, 192, 171, 0.3);
+}
+
+main .comp-font {
+  font-size: .7rem;
+  font-weight: 700;
+  padding: .5em 0 .5em 0;
+}
+
+label {
+  display: block;
+}
+
+button {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */
