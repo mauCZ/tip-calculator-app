@@ -5,7 +5,7 @@
     box-sizing: border-box;
     // border: 1px solid black;
 }
-html{
+html {
     font-size: $input-font-size;
 }
 body {
@@ -17,110 +17,154 @@ body {
     justify-content: center;
     align-items: center;
 }
-#logo{
+#logo {
     margin-bottom: 40px;
 }
-main{
-    // width: 860px;
+.border{
+    border: 1px solid black;
+}
+main {
     background-color: $light-grayish-cyan2;
     border-radius: $input-font-size;
     font-family: $font;
     display: flex;
     padding: 1rem;
-    
-    .INPUT{
+    .INPUT {
         border-radius: 14px;
         padding: 1.7rem 1.7rem 1.7rem 1.7rem;
         display: flex;
         flex-direction: column;
-
-        .info-input{
-            padding: .5em 0 .5em 0;
-            input{
+        .info-input {
+            padding: 0.5em 0 0.5em 0;
+            input {
                 font-size: $input-font-size;
                 border: 0px;
                 background-color: $dark-grayish-cyan1;
-                padding: .3em .3em .3em .3em;
+                padding: 0.3em 0.8em 0.3em 0.3em;
             }
-            input[type='text']{
+            input[type="text"] {
                 width: 100%;
+                font-family: $font;
             }
         }
-        .options-container{
+        .options-container {
             display: grid;
             grid-template-columns: 120px 120px 120px;
             grid-template-rows: 1fr 1fr;
             gap: 10px;
-
-            .option{
+            .option {
                 background-color: $very-dark-cyan;
             }
-            ::placeholder{
+            ::placeholder {
                 color: $very-dark-cyan;
                 text-align: center;
             }
-            .percentage{
+            .percentage {
                 border: 0px;
                 font-family: $font;
-                padding: .3em 0 .3em 0;
+                padding: 0.3em 0 0.3em 0;
                 color: $light-grayish-cyan2;
                 border-radius: 8px;
-                font-size: 1rem;    
+                font-size: 1rem;
                 font-weight: 700;
             }
         }
-        .comp-font{
+        .comp-font {
             opacity: 55%;
         }
     }
-    .OUTPUT{
+    .OUTPUT {
         border-radius: 14px;
         padding: 1.7rem 1.7rem 1.7rem 1.7rem;
         background-color: $very-dark-cyan;
         position: relative;
-        font-size: .6rem;
-
-        .tip-amount-person{
+        font-size: 0.6rem;
+        .tip-amount-person {
             display: flex;
-            padding-top: .5em;
-            padding-bottom: .5em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
             justify-content: space-between;
             font-weight: 700;
-
-            p{
+            p {
                 padding-right: 3em;
                 color: $light-grayish-cyan1;
             }
-            p::first-line{
+            p::first-line {
                 opacity: 100%;
             }
-            label{
+            label {
                 color: $strong-cyan;
                 font-size: 1.5rem;
                 font-weight: 700;
             }
         }
-        button{
+        button {
             width: 100%;
             font-size: 1rem;
             position: relative;
             font-weight: 700;
             bottom: -170px;
             border-radius: 8px;
-            padding: .3em 0 .3em 0;
+            padding: 0.3em 0 0.3em 0;
             border: 0px;
-            background-color: hsla(172, 67%, 45%,.3);
+            color: $very-dark-cyan;
+            background-color: hsla(172, 69%, 51%, 0.1);
         }
     }
-    .comp-font{
-        font-size: .7rem;
+    .comp-font {
+        font-size: 0.7rem;
         font-weight: 700;
-        padding: .5em 0 .5em 0;
+        padding: 0.5em 0 0.5em 0;
+    }
+    .number-inputs{
+        text-align: right;
     }
 }
-label{
+label {
     display: block;
 }
-button{
+button {
     display: block;
+}
+@media screen and (max-width:880px){
+    main{
+        flex-direction: column;
+        padding: 1.5em;
+        .INPUT{
+            padding: 0;
+            padding-bottom: .8em;
+        }
+        .OUTPUT{
+            #reset-btn{
+                top: 20px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 475px){
+    html{
+        font-size: 20px;
+    }
+    main{
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 350px;
+        .INPUT{
+            .options-container{
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+        }
+        .OUTPUT{
+            padding: 1.2em 1.5em;
+            .tip-amount-person{
+                p{
+                    padding-right: 1.2em;
+                }
+            }
+            #reset-btn{
+                top: 0;
+            }
+        }
+    }
 }

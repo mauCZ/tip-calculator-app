@@ -31,6 +31,10 @@ body {
   margin-bottom: 40px;
 }
 
+.border {
+  border: 1px solid black;
+}
+
 main {
   background-color: #f4fafa;
   border-radius: 24px;
@@ -54,18 +58,19 @@ main .INPUT {
 }
 
 main .INPUT .info-input {
-  padding: .5em 0 .5em 0;
+  padding: 0.5em 0 0.5em 0;
 }
 
 main .INPUT .info-input input {
   font-size: 24px;
   border: 0px;
   background-color: rgba(94, 122, 125, 0.1);
-  padding: .3em .3em .3em .3em;
+  padding: 0.3em 0.8em 0.3em 0.3em;
 }
 
-main .INPUT .info-input input[type='text'] {
+main .INPUT .info-input input[type="text"] {
   width: 100%;
+  font-family: "Space Mono", monospace;
 }
 
 main .INPUT .options-container {
@@ -105,7 +110,7 @@ main .INPUT .options-container ::placeholder {
 main .INPUT .options-container .percentage {
   border: 0px;
   font-family: "Space Mono", monospace;
-  padding: .3em 0 .3em 0;
+  padding: 0.3em 0 0.3em 0;
   color: #f4fafa;
   border-radius: 8px;
   font-size: 1rem;
@@ -121,15 +126,15 @@ main .OUTPUT {
   padding: 1.7rem 1.7rem 1.7rem 1.7rem;
   background-color: #00494d;
   position: relative;
-  font-size: .6rem;
+  font-size: 0.6rem;
 }
 
 main .OUTPUT .tip-amount-person {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -158,15 +163,20 @@ main .OUTPUT button {
   font-weight: 700;
   bottom: -170px;
   border-radius: 8px;
-  padding: .3em 0 .3em 0;
+  padding: 0.3em 0 0.3em 0;
   border: 0px;
-  background-color: rgba(38, 192, 171, 0.3);
+  color: #00494d;
+  background-color: rgba(44, 216, 193, 0.1);
 }
 
 main .comp-font {
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: .5em 0 .5em 0;
+  padding: 0.5em 0 0.5em 0;
+}
+
+main .number-inputs {
+  text-align: right;
 }
 
 label {
@@ -175,5 +185,48 @@ label {
 
 button {
   display: block;
+}
+
+@media screen and (max-width: 880px) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 1.5em;
+  }
+  main .INPUT {
+    padding: 0;
+    padding-bottom: .8em;
+  }
+  main .OUTPUT #reset-btn {
+    top: 20px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  html {
+    font-size: 20px;
+  }
+  main {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 350px;
+  }
+  main .INPUT .options-container {
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+  main .OUTPUT {
+    padding: 1.2em 1.5em;
+  }
+  main .OUTPUT .tip-amount-person p {
+    padding-right: 1.2em;
+  }
+  main .OUTPUT #reset-btn {
+    top: 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */
