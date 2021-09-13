@@ -21,22 +21,25 @@
         <section class='INPUT'>
             <div class='info-input' >
                 <label class='comp-font' for="id">Bill</label>
-                <input type="text" class='number-inputs' placeholder="0">
+                <img src="./images/icon-dollar.svg" alt="dollar icon">
+                <input type="number" class='number-inputs' placeholder="0">
             </div>
             <div class='info-input'>
                 <p class='comp-font'>Select Tip %</p>
                 <div class="options-container">
-                    <button class='option percentage'>5%</button>
-                    <button class='option percentage'>10%</button>
-                    <button class='option percentage'>15%</button>
-                    <button class='option percentage'>25%</button>
-                    <button class='option percentage'>50%</button>
-                    <input class='custom percentage' type="type" placeholder="Custom"> 
+                    <button class=' percentage'  value=5>5%</button>
+                    <button class=' percentage'  value=10>10%</button>
+                    <button class=' percentage'  value=15>15%</button>
+                    <button class=' percentage'  value=25>25%</button>
+                    <button class=' percentage'  value=50>50%</button>
+                    <input class='custom number-inputs' type="number" placeholder="Custom"> 
                 </div>
             </div>
-            <div class='info-input'>
+            <div class='info-input' >
                 <label class='comp-font' for="persons">Number of People</label>
-                <input type="text" class='number-inputs' placeholder="0">
+                <div id="error"></div>
+                <img src="./images/icon-person.svg" alt="person icon">
+                <input type="number" class='number-inputs' placeholder="0">
             </div>
         </section>
         <section class='OUTPUT'>
@@ -55,6 +58,7 @@
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
   Coded by <a href="#">Your Name Here</a>.
 </div> -->
+<script src="./js/main.js"></script>
 </body>
 
 </html>

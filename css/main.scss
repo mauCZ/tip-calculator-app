@@ -5,6 +5,22 @@
     box-sizing: border-box;
     // border: 1px solid black;
 }
+
+/*----------------------------------*/
+*,*:focus,*:hover{
+    outline:none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+/*----------------------------------*/
+
 html {
     font-size: $input-font-size;
 }
@@ -20,9 +36,6 @@ body {
 #logo {
     margin-bottom: 40px;
 }
-.border{
-    border: 1px solid black;
-}
 main {
     background-color: $light-grayish-cyan2;
     border-radius: $input-font-size;
@@ -36,15 +49,31 @@ main {
         flex-direction: column;
         .info-input {
             padding: 0.5em 0 0.5em 0;
+            position: relative;
             input {
                 font-size: $input-font-size;
-                border: 0px;
                 background-color: $dark-grayish-cyan1;
+                border: 2px solid $dark-grayish-cyan1;
                 padding: 0.3em 0.8em 0.3em 0.3em;
             }
-            input[type="text"] {
+            input:focus{
+                border: 2px solid $strong-cyan;
+            }
+            input[type="number"] {
                 width: 100%;
                 font-family: $font;
+            }
+            img{
+                position: absolute;
+                top: 3em;
+                left: .7em;
+            }
+            #error{
+                color: red;
+                position: absolute;
+                right: 3em;
+                top: 1.4em;
+                font-size: .7rem;
             }
         }
         .options-container {
@@ -52,21 +81,27 @@ main {
             grid-template-columns: 120px 120px 120px;
             grid-template-rows: 1fr 1fr;
             gap: 10px;
-            .option {
-                background-color: $very-dark-cyan;
-            }
-            ::placeholder {
-                color: $very-dark-cyan;
-                text-align: center;
-            }
             .percentage {
+                background-color: $very-dark-cyan;
                 border: 0px;
                 font-family: $font;
-                padding: 0.3em 0 0.3em 0;
                 color: $light-grayish-cyan2;
                 border-radius: 8px;
                 font-size: 1rem;
                 font-weight: 700;
+            }
+            .percentage:active{
+                background-color: $strong-cyan;
+            }
+            .custom{
+                font-size: 1rem;
+                border-radius: 8px;
+                border: 2px solid $light-grayish-cyan1;
+                font-family: $font;
+            }
+            .percentage::placeholder{
+                color: $very-dark-cyan;
+                text-align: center;
             }
         }
         .comp-font {
@@ -93,9 +128,11 @@ main {
                 opacity: 100%;
             }
             label {
+                min-width: 7rem;
                 color: $strong-cyan;
                 font-size: 1.5rem;
                 font-weight: 700;
+                text-align: right;
             }
         }
         button {
@@ -110,6 +147,9 @@ main {
             color: $very-dark-cyan;
             background-color: hsla(172, 69%, 51%, 0.1);
         }
+        button:active{
+            background-color: $strong-cyan;
+        }
     }
     .comp-font {
         font-size: 0.7rem;
@@ -118,6 +158,9 @@ main {
     }
     .number-inputs{
         text-align: right;
+        padding-right: 2em;
+        color: $very-dark-cyan;
+        font-weight: 700;
     }
 }
 label {
