@@ -10,7 +10,6 @@ let tip_output = output[0];
 let total_output = output[1];
 let reset_btn = document.getElementById("reset-btn");
 
-let percentage = NaN;
 
 setEventListeners();
 
@@ -19,6 +18,8 @@ function setEventListeners(){
     // bill_input.addEventListener('blur',checkBill,false);
     // custom_perc_input.addEventListener('blur',checkCustomPercentage,false);
     // num_people_input.addEventListener('blur',calculate,false);
+
+    reset_btn.addEventListener('click',reset,false);
     num_people_input.addEventListener('blur',calculate,false);
 
     for(let percs of document.getElementsByClassName("percentage")){
@@ -31,9 +32,7 @@ function setEventListeners(){
 
 function calculate(e){
     let bill = parseFloat(bill_input.value);
-    if(custom_perc_input.value!=''){
-        percentage = parseFloat(custom_perc_input.value);
-    }
+    let percentage = parseFloat(custom_perc_input.value);
     let people = parseFloat(e.target.value);
     
     if(checkBill(bill) && checkCustomPercentage(percentage) && checkPositiveIntegerNumber(people)){
@@ -47,7 +46,16 @@ function calculate(e){
         error.innerText = "ERROR";
     }
 }
+function reset(e){
+    tip_output.innerText = "$0.00";
+    total_output.innerText = "$0.00";
+    bill_input.value = '';
+    custom_perc_input.value = '';
+    num_people_input.value = '';
+    error.innerText = '';
+}
 function customPercentage(e){
+    custom_perc_input.value = e.target.value;
     percentage = parseInt(e.target.value);
 }
 function checkPositiveIntegerNumber(n){
